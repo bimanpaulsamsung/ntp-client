@@ -21,13 +21,11 @@
 
 class NTPClient {
     public:
-        explicit NTPClient(NetworkInterface *interface = NULL);
+        explicit NTPClient();
         void set_server(const char* server, int port);
-        time_t get_timestamp(int timeout = 15000);
-        void network(NetworkInterface *interface);
+        time_t get_timestamp();
 
     private:
-        NetworkInterface *iface;
         const char* nist_server_address;
         int nist_server_port;
 
